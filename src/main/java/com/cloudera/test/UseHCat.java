@@ -23,10 +23,10 @@ import org.apache.hadoop.conf.*;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.*;
 import org.apache.hadoop.util.*;
-import org.apache.hcatalog.common.*;
-import org.apache.hcatalog.mapreduce.*;
-import org.apache.hcatalog.data.*;
-import org.apache.hcatalog.data.schema.*;
+import org.apache.hive.hcatalog.common.*;
+import org.apache.hive.hcatalog.mapreduce.*;
+import org.apache.hive.hcatalog.data.*;
+import org.apache.hive.hcatalog.data.schema.*;
 
 public class UseHCat extends Configured implements Tool {
 
@@ -78,8 +78,7 @@ public class UseHCat extends Configured implements Tool {
         String dbName = null;
 
         Job job = new Job(conf, "UseHCat");
-        HCatInputFormat.setInput(job, InputJobInfo.create(dbName,
-                inputTableName, null));
+        HCatInputFormat.setInput(job, dbName, inputTableName);
         job.setJarByClass(UseHCat.class);
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
