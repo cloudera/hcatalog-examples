@@ -20,14 +20,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cloudera.test</groupId>
-  <artifactId>hcatalog-examples</artifactId>
+  <artifactId>UseHCat</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>hcatalog-examples</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <hadoop.version>2.0.0-mr1-cdh4.5.0</hadoop.version>
-    <hcatalog.version>0.5.0-cdh4.5.0</hcatalog.version>
+    <hadoop.version>2.5.0-cdh5.2.0</hadoop.version>
+    <hcatalog.version>0.13.1-cdh5.2.0</hcatalog.version>
   </properties>
 
   <build>
@@ -73,8 +73,8 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.hcatalog</groupId>
-      <artifactId>hcatalog-core</artifactId>
+      <groupId>org.apache.hive.hcatalog</groupId>
+      <artifactId>hive-hcatalog-core</artifactId>
       <version>${hcatalog.version}</version>
       <scope>compile</scope>
       <exclusions>
